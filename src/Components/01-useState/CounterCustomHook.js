@@ -1,7 +1,7 @@
 import React from 'react'
-import { HookApp } from '../../HookApp';
+// import { HookApp } from '../../HookApp';
 import { useCounter } from '../../Hooks/useCounter'
-import { CounterApp } from './CounterApp';
+// import { CounterApp } from './CounterApp';
 
 export const CounterCustomHook = () => {
 
