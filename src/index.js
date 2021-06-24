@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { FocusScreen } from './Components/04-useRef/FocusScreen';
+import { RealExampleFocus } from './Components/04-useRef/RealExampleFocus';
+// import { FocusScreen } from './Components/04-useRef/FocusScreen';
 // import { FormCustomHook } from './Components/02-useEffect/FormCustomHook';
 //import { MultipleCustomHooks } from './Components/03-examples/MultipleCustomHooks';
 // import { CounterApp } from './Components/01-useState/CounterApp';
@@ -12,7 +13,7 @@ import { FocusScreen } from './Components/04-useRef/FocusScreen';
 ReactDOM.render(
   
 
-  <FocusScreen/>,
+ <RealExampleFocus/>,
 
   
   document.getElementById('root')
