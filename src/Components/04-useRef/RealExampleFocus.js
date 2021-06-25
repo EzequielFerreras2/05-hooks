@@ -15,12 +15,18 @@ const [show, setShow] = useState(false)
         {show && <MultipleCustomHooks/>}
       
         <button
-        className='btn btn-danger mt-3'
-        onClick={ ()=>{
 
-            setShow(!show)
+                className='btn btn-danger mt-3'
 
-        } }> Mostras Ocultar</button>
+                onClick={ ()=>{
+
+                    setShow(!show)
+
+                } }> 
+                
+                Mostras Ocultar
+                
+        </button>
 
 
         </div>
