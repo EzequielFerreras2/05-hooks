@@ -2,7 +2,7 @@ import React, { useEffect, useReducer } from 'react'
 import { useFrom } from '../../Hooks/useFrom';
 import { todoReducer } from './todoReducer';
 
-
+//Define el stado inicial del reducer.
 const init = () =>{
 
     return [{
@@ -46,6 +46,7 @@ export const TodoApp = () => {
         }
 
 
+        //se define el nuevo todo que se va imponer en el reducer
         const newTodo= {
             id:new Date().getTime(),
             desc: description,
@@ -53,14 +54,17 @@ export const TodoApp = () => {
         
         };
 
+         //se le pone la accion que se va relizar del reducer
         const action={
 
             type:'add',
             payload:newTodo
         }
 
-
+        // envia la accion al reducer indicando cual va a realizar por ejemplo Add
         dispatch(action);
+
+        //recetea el cambo de 
         reset();
 
     };
@@ -120,7 +124,7 @@ export const TodoApp = () => {
                                     onChange={handleInputChange}
                                                     />
 
-                                                    
+
                                         <div className="d-grid gap-2">
                                              <button className="btn btn-success mt-2" type="submit">Agregar</button>
                                         </div>
