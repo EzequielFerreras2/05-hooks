@@ -1,0 +1,9 @@
+.complete{
+
+text-decoration: line-through;
+
+}
+p{
+    margin: 0;
+    cursor:pointer;
+}

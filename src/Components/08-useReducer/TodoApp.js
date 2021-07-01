@@ -1,16 +1,20 @@
 import React, { useEffect, useReducer } from 'react'
 import { useFrom } from '../../Hooks/useFrom';
 import { todoReducer } from './todoReducer';
+import './estilos.css';
 
 //Define el stado inicial del reducer.
 const init = () =>{
 
-    return [{
-        id:new Date().getTime(),
-        desc:'Aprender React',
-        done:false
+    // toma los todos del local estorage si nulll regresa un arreglo vacio.
+    return JSON.parse(localStorage.getItem('todos')) || [];
+
+    // return [{
+    //     id:new Date().getTime(),
+    //     desc:'Aprender React',
+    //     done:false
     
-    }];
+    // }];
 };
 
 
@@ -33,6 +37,29 @@ export const TodoApp = () => {
         localStorage.setItem('todos', JSON.stringify(todos))
         
     }, [todos])
+
+
+    //elimina un todo    
+    const handleDelete =( todoId ) =>{
+
+        const action ={
+
+            type:'delete',
+            payload:todoId
+
+        }
+        dispatch(action);
+
+    };
+
+
+    const handleToggle =(todoid) =>{
+
+        dispatch({
+            type:'toggle',
+            payload:todoid
+        });
+    }
 
 
     //funcion que reliza el cambio del formulario cuando es completado
@@ -87,13 +114,13 @@ export const TodoApp = () => {
                                         >
 
                                         <div className='col align-self-center'>
-                                                {i + 1}. {todo.desc}....
+                                               <p className={`${todo.done && 'complete' }`} onClick={()=>handleToggle(todo.id)}> {i + 1}. {todo.desc}....</p>
                                         </div>
                                         
 
                                         <div className=' col offset-10'>
 
-                                            <button  className='btn btn-danger'>
+                                            <button onClick={() => handleDelete(todo.id) } className='btn btn-danger'>
                                                 Borrar
                                             </button> 
 
@@ -126,7 +153,7 @@ export const TodoApp = () => {
 
 
                                         <div className="d-grid gap-2">
-                                             <button className="btn btn-success mt-2" type="submit">Agregar</button>
+                                             <button  className="btn btn-success mt-2" type="submit">Agregar</button>
                                         </div>
 
                                 </form>
