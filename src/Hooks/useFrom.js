@@ -5,6 +5,10 @@ export const useFrom = (initialState ={}) => {
     
 const [values, setValue] = useState(initialState)
 
+const reset =() =>
+{
+    setValue(initialState) 
+}
 
 const handleInputChange = ({target})=>{
 
@@ -17,6 +21,6 @@ const handleInputChange = ({target})=>{
    
 };
 
-return[values, handleInputChange]
+return[values, handleInputChange,reset]
 
 }
