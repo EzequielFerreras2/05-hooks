@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from 'react'
 import { useFrom } from '../../Hooks/useFrom';
 import { todoReducer } from './todoReducer';
 import './estilos.css';
+import { TodosList } from './TodosList';
 
 //Define el stado inicial del reducer.
 const init = () =>{
@@ -105,32 +106,11 @@ export const TodoApp = () => {
 
                     <div className='col-7'>
 
-                                <ul className='list-group list-group-flush'>
-                                {
-                                    todos.map((todo,i) =>(
-                                        <li
-                                        key={todo.id}
-                                        className='list-group-item'
-                                        >
-
-                                        <div className='col align-self-center'>
-                                               <p className={`${todo.done && 'complete' }`} onClick={()=>handleToggle(todo.id)}> {i + 1}. {todo.desc}....</p>
-                                        </div>
-                                        
-
-                                        <div className=' col offset-10'>
-
-                                            <button onClick={() => handleDelete(todo.id) } className='btn btn-danger'>
-                                                Borrar
-                                            </button> 
-
-                                        </div>
-                                      
-                                        </li>
-                                        
-                                    ))
-                                }
-                                </ul>
+                               <TodosList 
+                               todos={ todos}
+                               handleDelete ={handleDelete }
+                               handleToggle ={handleToggle }
+                               />
                     </div>
 
 
