@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import { RealExampleFocus } from './Components/04-useRef/RealExampleFocus';
 import { TodoApp } from './Components/08-useReducer/TodoApp';
+import { MainApp } from './Components/09-useContext/MainApp';
 // import { FocusScreen } from './Components/04-useRef/FocusScreen';
 // import { FormCustomHook } from './Components/02-useEffect/FormCustomHook';
 //import { MultipleCustomHooks } from './Components/03-examples/MultipleCustomHooks';
@@ -14,8 +15,7 @@ import { TodoApp } from './Components/08-useReducer/TodoApp';
 ReactDOM.render(
   
 
-<TodoApp/>,
-
+<MainApp/>,
   
   document.getElementById('root')
 );
