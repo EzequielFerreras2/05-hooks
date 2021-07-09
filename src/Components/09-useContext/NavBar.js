@@ -14,9 +14,9 @@ export const NavBar = () => {
 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-                <Link exact to='/' className="nav-link active" aria-current="page">Home</Link >
-                <Link exact to='/login' className="nav-link" >Login</Link>
-                <Link exact to='/about' className="nav-link" >About</Link>
+                <Link to='/' className="nav-link active" aria-current="page">Home</Link >
+                <Link to='/login' className="nav-link" >Login</Link>
+                <Link to='/about' className="nav-link" >About</Link>
               
             </div>
         </div>
